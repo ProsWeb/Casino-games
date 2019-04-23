@@ -6,3 +6,9 @@
 
 # Idea files
 .idea/
+
+# Maven
+maven-wrapper.jar
+!/.mvn/wrapper/maven-wrapper.properties
+/.mvn/*
+pom.xml.versionsBackup
