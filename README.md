@@ -1,3 +1,7 @@
-Hexlet java project - "Casino"
-Compile and run
+# Hexlet java project - "Casino"
+
+### Compile and run
+
+```bash
 $ make
+```
