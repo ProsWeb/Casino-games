@@ -1,13 +1,8 @@
-# Compiled class file
-*.class
-
-# Log file
-*.log
+target/
+pom.xml.versionsBackup
+!/.mvn/wrapper/maven-wrapper.properties
+/.mvn/*
+logs/
 
 # Idea files
 .idea/
-
-# Maven
-!/.mvn/wrapper/maven-wrapper.properties
-/.mvn/*
-pom.xml.versionsBackup
