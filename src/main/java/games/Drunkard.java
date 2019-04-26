@@ -6,7 +6,7 @@ public class Drunkard {
 
     private static final int PARS_TOTAL_COUNT = Par.values().length;
 
-    private static final int CARDS_TOTAL_COUNT = PARS_TOTAL_COUNT * Suit.values().length;
+    //private static final int CARDS_TOTAL_COUNT = PARS_TOTAL_COUNT * Suit.values().length;
 
     public static void main(String... __) {
 
