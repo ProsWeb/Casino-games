@@ -10,7 +10,7 @@ public class Slot {
 
     private static final int BET = 10;
 
-    private static final int PRIZE = 1_000;
+    private static final int PRIZE = 1000;
 
     public static void main(String... __) {
 
