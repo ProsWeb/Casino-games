@@ -120,6 +120,7 @@ public class Drunkard {
 
     private static void game(final int cardPlayer1, final int cardPlayer2) {
         Par cardPlayer1Par = getPar(cardPlayer1);
+
         Par cardPlayer2Par = getPar(cardPlayer2);
 
         switch (compareCard(cardPlayer1Par, cardPlayer2Par)) {
