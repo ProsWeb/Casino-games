@@ -104,7 +104,7 @@ public class Drunkard {
         if (head >= tail) {
             count = head - tail;
         } else {
-            count = (head + CARDS_TOTAL_COUNT) - tail;
+            count = head + CARDS_TOTAL_COUNT - tail;
         }
 
         if (count == 0 && winner[player]) {
