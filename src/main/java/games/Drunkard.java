@@ -123,22 +123,19 @@ public class Drunkard {
 
         Par cardPlayer2Par = getPar(cardPlayer2);
 
-        switch (compareCard(cardPlayer1Par, cardPlayer2Par)) {
-            case 0:
-                addCard(0, cardPlayer1);
-                addCard(1, cardPlayer2);
-                out.println("Спор - каждый остаётся при своих!");
-                break;
-            case 1:
-                addCard(0, cardPlayer1);
-                addCard(0, cardPlayer2);
-                out.println("Выиграл игрок 1!");
-                break;
-            case -1:
-                addCard(1, cardPlayer1);
-                addCard(1, cardPlayer2);
-                out.println("Выиграл игрок 2!");
-                break;
+        int i = compareCard(cardPlayer1Par, cardPlayer2Par);
+        if (i == 0) {
+            addCard(0, cardPlayer1);
+            addCard(1, cardPlayer2);
+            out.println("Спор - каждый остаётся при своих!");
+        } else if (i == 1) {
+            addCard(0, cardPlayer1);
+            addCard(0, cardPlayer2);
+            out.println("Выиграл игрок 1!");
+        } else {
+            addCard(1, cardPlayer1);
+            addCard(1, cardPlayer2);
+            out.println("Выиграл игрок 2!");
         }
     }
 
