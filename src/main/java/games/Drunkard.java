@@ -1,14 +1,9 @@
 package games;
 
+import static games.CardUtils.*;
 import static java.lang.System.out;
 
-import org.apache.commons.math3.util.MathArrays;
-
 public class Drunkard {
-
-    private static final int PARS_TOTAL_COUNT = Par.values().length;
-
-    private static final int CARDS_TOTAL_COUNT = PARS_TOTAL_COUNT * Suit.values().length;
 
     private static int[][] playersCards = new int[2][CARDS_TOTAL_COUNT];
 
@@ -21,15 +16,9 @@ public class Drunkard {
 
     public static void main(String... __) {
 
-        for (int i = 0; i < CARDS_TOTAL_COUNT; i++) {
-            deck[i] = i;
-        }
+        System.arraycopy(getShuffledCards(), 0, playersCards[0], 0, CARDS_TOTAL_COUNT / 2);
 
-        MathArrays.shuffle(deck);
-
-        System.arraycopy(deck, 0, playersCards[0], 0, CARDS_TOTAL_COUNT / 2);
-
-        System.arraycopy(deck, CARDS_TOTAL_COUNT / 2, playersCards[1], 0, CARDS_TOTAL_COUNT / 2);
+        System.arraycopy(getShuffledCards(), CARDS_TOTAL_COUNT / 2, playersCards[1], 0, CARDS_TOTAL_COUNT / 2);
 
         playersCardHeads[0] = CARDS_TOTAL_COUNT / 2;
 
@@ -46,8 +35,8 @@ public class Drunkard {
 
             out.printf("Итерация №%d игрок №1 карта: %s; игрок №2 карта: %s%n",
                     count,
-                    toString(cardPlayer1),
-                    toString(cardPlayer2)
+                    CardUtils.toString(cardPlayer1),
+                    CardUtils.toString(cardPlayer2)
             );
 
             game(cardPlayer1, cardPlayer2);
@@ -150,17 +139,4 @@ public class Drunkard {
 
         return Integer.compare(card1Par.ordinal(), card2Par.ordinal());
     }
-
-    private static Suit getSuit(final int cardNumber) {
-        return Suit.values()[cardNumber / PARS_TOTAL_COUNT];
-    }
-
-    private static Par getPar(final int cardNumber) {
-        return Par.values()[cardNumber % PARS_TOTAL_COUNT];
-    }
-
-    private static String toString(final int cardNumber) {
-        return getPar(cardNumber) + " " + getSuit(cardNumber);
-    }
-
 }
