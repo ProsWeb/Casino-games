@@ -37,7 +37,7 @@ class CardUtils {
         return Par.values()[cardNumber % PARS_TOTAL_COUNT];
     }
 
-    static String toString(final int cardNumber) {
+    static String cardToString(final int cardNumber) {
         return getPar(cardNumber) + " " + getSuit(cardNumber);
     }
 

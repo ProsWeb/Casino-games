@@ -1,6 +1,7 @@
 package games;
 
 import static games.CardUtils.*;
+
 import static java.lang.System.out;
 
 public class Drunkard {
@@ -33,8 +34,8 @@ public class Drunkard {
 
             out.printf("Итерация №%d игрок №1 карта: %s; игрок №2 карта: %s%n",
                     count,
-                    CardUtils.toString(cardPlayer1),
-                    CardUtils.toString(cardPlayer2)
+                    cardToString(cardPlayer1),
+                    cardToString(cardPlayer2)
             );
 
             game(cardPlayer1, cardPlayer2);

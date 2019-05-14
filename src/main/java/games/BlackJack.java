@@ -29,17 +29,17 @@ public class BlackJack {
             initRound();
 
             do {
-                out.printf("Вам выпала карта %s%n", CardUtils.toString(addCard2Player(0)));
+                out.printf("Вам выпала карта %s%n", cardToString(addCard2Player(0)));
             } while (sum(0) < MIN_SUM || sum(0) < MAX_PLAYER_SUM
                     && confirm(String.format("Сумма ваших очков: %d. Берём еще?", sum(0))));
 
             do {
-                out.printf("Компьютеру выпала карта %s%n", CardUtils.toString(addCard2Player(1)));
+                out.printf("Компьютеру выпала карта %s%n", cardToString(addCard2Player(1)));
             } while (sum(1) < MIN_SUM);
 
             while (sum(1) < MAX_COMP_SUM) {
                 out.printf("Компьютер решил взять ещё и ему выпала карта %s%n",
-                        CardUtils.toString(addCard2Player(1)));
+                        cardToString(addCard2Player(1)));
             }
 
             int playerSum = getFinalSum(0);
