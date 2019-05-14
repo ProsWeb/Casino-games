@@ -1,8 +1,8 @@
 package games;
 
-import org.slf4j.Logger;
-
 import java.io.IOException;
+
+import org.slf4j.Logger;
 
 public class Choice {
 

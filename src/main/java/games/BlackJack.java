@@ -1,8 +1,8 @@
 package games;
 
-import org.slf4j.Logger;
-
 import java.io.IOException;
+
+import org.slf4j.Logger;
 
 import static games.CardUtils.*;
 import static games.Choice.getCharacterFromUser;
@@ -80,7 +80,7 @@ public class BlackJack {
         cursor = 0;
     }
 
-    private static int addCard2Player(int player) {
+    private static int addCard2Player(final int player) {
        int card = cards[cursor];
        int playerCursor = playersCursors[player];
        playersCards[player][playerCursor] = card;
@@ -91,7 +91,7 @@ public class BlackJack {
        return card;
     }
 
-    private static int sum(int player) {
+    private static int sum(final int player) {
         int sum = 0;
         int playerCursor = playersCursors[player];
 
@@ -106,7 +106,7 @@ public class BlackJack {
         return sum(player) <= MAX_VALUE ? sum(player) : 0;
     }
 
-    private static boolean confirm(String message) throws IOException {
+    private static boolean confirm(final String message) throws IOException {
         log.info("{} \"Y\" - да, {любой другой символ} - нет (чтобы выйти из игры, нажмите Ctrl + C",
                 message);
         switch (getCharacterFromUser()) {
