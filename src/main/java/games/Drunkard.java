@@ -1,10 +1,12 @@
 package games;
 
+import org.slf4j.Logger;
+
 import static games.CardUtils.*;
 
-import static java.lang.System.out;
-
 public class Drunkard {
+
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Drunkard.class);
 
     private static int[][] playersCards = new int[2][CARDS_TOTAL_COUNT];
 
@@ -32,7 +34,7 @@ public class Drunkard {
             int cardPlayer1 = getCard(0);
             int cardPlayer2 = getCard(1);
 
-            out.printf("Итерация №%d игрок №1 карта: %s; игрок №2 карта: %s%n",
+            log.info("Итерация №{} игрок №1 карта: {}; игрок №2 карта: {}",
                     count,
                     cardToString(cardPlayer1),
                     cardToString(cardPlayer2)
@@ -43,15 +45,15 @@ public class Drunkard {
             int player1cardsCount = countCards(0);
             int player2cardsCount = countCards(1);
 
-            out.printf("У игрока №1 %d карт, у игрока №2 %d карт%n",
+            log.info("У игрока №1 {} карт, у игрока №2 {} карт",
                     player1cardsCount, player2cardsCount
             );
         }
 
         if (winner[0]) {
-            out.printf("Выиграл первый игрок! Количество произведённых итераций: %d%n", count);
+            log.info("Выиграл первый игрок! Количество произведённых итераций: {}", count);
         } else {
-            out.printf("Выиграл второй игрок! Количество произведённых итераций: %d%n.", count);
+            log.info("Выиграл второй игрок! Количество произведённых итераций: {}", count);
         }
     }
 
@@ -115,15 +117,15 @@ public class Drunkard {
         if (i == 0) {
             addCard(0, cardPlayer1);
             addCard(1, cardPlayer2);
-            out.println("Спор - каждый остаётся при своих!");
+            log.info("Спор - каждый остаётся при своих!");
         } else if (i == 1) {
             addCard(0, cardPlayer1);
             addCard(0, cardPlayer2);
-            out.println("Выиграл игрок 1!");
+            log.info("Выиграл игрок 1!");
         } else {
             addCard(1, cardPlayer1);
             addCard(1, cardPlayer2);
-            out.println("Выиграл игрок 2!");
+            log.info("Выиграл игрок 2!");
         }
     }
 
