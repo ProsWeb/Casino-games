@@ -18,6 +18,7 @@ public class BlackJack {
 
     private static final int MAX_VALUE = 21;
     private static final int MAX_CARDS_COUNT = 8;
+
     private static final int MIN_SUM = 11;
     private static final int MAX_PLAYER_SUM = 20;
     private static final int MAX_COMP_SUM = 17;
