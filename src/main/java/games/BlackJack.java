@@ -29,8 +29,8 @@ public class BlackJack {
 
             do {
                 out.printf("Вам выпала карта %s%n", CardUtils.toString(addCard2Player(0)));
-            } while (sum(0) < MIN_SUM || (sum(0) < MAX_PLAYER_SUM
-                    && confirm(String.format("Сумма ваших очков: %d. Берём еще?", sum(0)))));
+            } while (sum(0) < MIN_SUM || sum(0) < MAX_PLAYER_SUM
+                    && confirm(String.format("Сумма ваших очков: %d. Берём еще?", sum(0))));
 
             do {
                 out.printf("Компьютеру выпала карта %s%n", CardUtils.toString(addCard2Player(1)));

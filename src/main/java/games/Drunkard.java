@@ -7,8 +7,6 @@ public class Drunkard {
 
     private static int[][] playersCards = new int[2][CARDS_TOTAL_COUNT];
 
-    private static int[] deck = new int[CARDS_TOTAL_COUNT];
-
     private static int[] playersCardTails = new int[2];
     private static int[] playersCardHeads = new int[2];
 

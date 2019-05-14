@@ -6,7 +6,7 @@ import static java.lang.System.*;
 
 public class Choice {
 
-    private static final String LINE_SEPARATOR = System.lineSeparator();
+    private static final String LINE_SEPARATOR = lineSeparator();
 
     public static void main(String... __) throws IOException {
 
