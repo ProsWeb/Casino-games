@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := build-run
+.DEFAULT_GOAL := update-build-run
 
 run:
 	java -jar ./target/Project1Java-1.0-SNAPSHOT-jar-with-dependencies.jar
@@ -6,10 +6,10 @@ run:
 clean:
 	rm -rf ./target
 
-build-run: build run
+update-build-run: update build run
 
 build:
-	./mvnw clean package
+	./mvnw verify
 
 update:
 	./mvnw versions:update-properties versions:display-plugin-updates
