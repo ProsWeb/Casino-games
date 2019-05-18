@@ -115,7 +115,7 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>3.5.4</version>
+                                    <version>3.3.9</version>
                                 </requireMavenVersion>
                             </rules>
                         </configuration>
@@ -163,19 +163,16 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.7.1</version>
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.0.0</version>
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>${maven-pmd-plugin.version}</version>
                 <configuration>
@@ -192,7 +189,6 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${maven-checkstyle-plugin.version}</version>
                 <executions>
@@ -244,13 +240,11 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>${maven-pmd-plugin.version}</version>
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
                 <version>${maven-jxr-plugin.version}</version>
             </plugin>
