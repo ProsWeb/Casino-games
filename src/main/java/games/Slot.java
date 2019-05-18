@@ -26,7 +26,7 @@ public class Slot {
 
         while (amount > 0) {
             log.info("У Вас {}$, ставка - {}", amount, BET);
-            log.info("Крутим барабаны!Розыгрыш принёс следующие результаты:");
+            log.info("Крутим барабаны! Розыгрыш принёс следующие результаты:");
 
             firstCounter = (firstCounter + (int) Math.round(Math.random() * PULL_COUNTER)) % COUNTER_SIZE;
             secondCounter = (secondCounter + (int) Math.round(Math.random() * PULL_COUNTER)) % COUNTER_SIZE;
