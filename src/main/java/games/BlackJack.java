@@ -11,11 +11,11 @@ public class BlackJack {
 
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(BlackJack.class);
 
-    private static int[] cards; // Основная колода
-    private static int cursor; // Счётчик карт основной колоды
+    private static int[] cards;
+    private static int cursor;
 
-    private static int[][] playersCards; // карты игроков. Первый индекс - номер игрока
-    private static int[] playersCursors; // курсоры карт игроков. Индекс - номер игрока
+    private static int[][] playersCards;
+    private static int[] playersCursors;
 
     private static int[] playersMoney = {100, 100};
 

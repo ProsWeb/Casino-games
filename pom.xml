@@ -12,16 +12,13 @@
 
     <properties>
 
-        <!--Project settings-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.release>11</maven.compiler.release>
 
-        <!--Libs-->
         <log4j-slf4j-impl.version>2.11.2</log4j-slf4j-impl.version>
         <commons-math3.version>3.6.1</commons-math3.version>
 
-        <!--Plugins-->
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <maven-assembly-plugin.version>3.1.1</maven-assembly-plugin.version>
         <jacoco-maven-plugin.version>0.8.3</jacoco-maven-plugin.version>
@@ -38,7 +35,6 @@
 
     <dependencies>
 
-        <!-- COMMON LIBS (Log4J2 & Vavr) -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
@@ -58,13 +54,11 @@
 
         <plugins>
 
-            <!-- COMPILER (Java10+ and lombok compatible) -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
             </plugin>
 
-            <!-- JAR with dependencies -->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>${maven-assembly-plugin.version}</version>
@@ -80,8 +74,8 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
-                        <phase>package</phase> <!-- bind to the packaging phase -->
+                        <id>make-assembly</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>single</goal>
                         </goals>
@@ -89,7 +83,6 @@
                 </executions>
             </plugin>
 
-            <!-- CODE COVERAGE (JaCoCo) -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -110,7 +103,6 @@
                 </executions>
             </plugin>
 
-            <!-- Minimum maven version -->
             <plugin>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>${maven-enforcer-plugin.version}</version>
@@ -131,7 +123,6 @@
                 </executions>
             </plugin>
 
-            <!-- SUREFIRE (compatible with JUnit 5+, Java 9+, Lombok) -->
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
@@ -163,7 +154,6 @@
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>${spotbugs-maven-plugin.version}</version>
                 <dependencies>
-                    <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
                     <dependency>
                         <groupId>com.github.spotbugs</groupId>
                         <artifactId>spotbugs</artifactId>
@@ -189,7 +179,7 @@
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>${maven-pmd-plugin.version}</version>
                 <configuration>
-                    <failOnViolation>true</failOnViolation> <!-- this is actually true by default, but can be disabled -->
+                    <failOnViolation>true</failOnViolation>
                     <printFailingErrors>true</printFailingErrors>
                 </configuration>
                 <executions>
@@ -223,15 +213,11 @@
                     <logViolationsToConsole>true</logViolationsToConsole>
                     <checkstyleRules>
                         <module name="Checker">
-                            <!-- Checks for Size Violations.                    -->
-                            <!-- See http://checkstyle.sf.net/config_sizes.html -->
                             <module name="FileLength">
                                 <property name="max" value="3500" />
                                 <property name="fileExtensions" value="java"/>
                             </module>
 
-                            <!-- Checks for whitespace                               -->
-                            <!-- See http://checkstyle.sf.net/config_whitespace.html -->
                             <module name="FileTabCharacter"/>
 
                             <module name="TreeWalker">
