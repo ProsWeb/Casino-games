@@ -109,16 +109,12 @@ public class Drunkard {
     }
 
     private static void game(final int cardPlayer1, final int cardPlayer2) {
-        Par cardPlayer1Par = getPar(cardPlayer1);
-
-        Par cardPlayer2Par = getPar(cardPlayer2);
-
-        int i = compareCard(cardPlayer1Par, cardPlayer2Par);
+        int i = compareCard(cardPlayer1, cardPlayer2);
         if (i == 0) {
             addCard(0, cardPlayer1);
             addCard(1, cardPlayer2);
             log.info("Спор - каждый остаётся при своих!");
-        } else if (i == 1) {
+        } else if (i > 2) {
             addCard(0, cardPlayer1);
             addCard(0, cardPlayer2);
             log.info("Выиграл игрок 1!");
@@ -129,15 +125,8 @@ public class Drunkard {
         }
     }
 
-    private static int compareCard(final Par card1Par, final Par card2Par) {
-        if (card1Par.equals(Par.SIX) && card2Par.equals(Par.ACE)) {
-            return 1;
-        }
-
-        if (card1Par.equals(Par.ACE) && card2Par.equals(Par.SIX)) {
-            return -1;
-        }
-
-        return Integer.compare(card1Par.ordinal(), card2Par.ordinal());
+    private static int compareCard(int card1, int card2) {
+        int result = card1 % PARS_TOTAL_COUNT - card2 % PARS_TOTAL_COUNT;
+        return Math.abs(result) == 8 ? -result : result;
     }
 }
