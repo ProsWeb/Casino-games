@@ -4,7 +4,7 @@ import org.apache.commons.math3.util.MathArrays;
 
 class CardUtils {
 
-    private static final int PARS_TOTAL_COUNT = Par.values().length;
+    static final int PARS_TOTAL_COUNT = Par.values().length;
 
     static final int CARDS_TOTAL_COUNT = PARS_TOTAL_COUNT * Suit.values().length;
 
