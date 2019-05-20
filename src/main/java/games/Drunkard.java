@@ -13,7 +13,7 @@ public class Drunkard {
     private static int[] playersCardTails = new int[2];
     private static int[] playersCardHeads = new int[2];
 
-    private static boolean[] winner = {false, false};
+    private static boolean isFirstPlayerWin = false;
 
     public static void main(String... __) {
 
@@ -50,7 +50,7 @@ public class Drunkard {
             );
         }
 
-        if (winner[0]) {
+        if (isFirstPlayerWin) {
             log.info("Выиграл первый игрок! Количество произведённых итераций: {}", count);
         } else {
             log.info("Выиграл второй игрок! Количество произведённых итераций: {}", count);
@@ -80,10 +80,7 @@ public class Drunkard {
         playersCards[player][head] = card;
         playersCardHeads[player] = incrementIndex(head);
 
-        for (int i = 0; i < winner.length; i++) {
-            winner[i] = false;
-        }
-        winner[player] = true;
+        isFirstPlayerWin = player == 0;
     }
 
     private static int countCards(final int player) {
@@ -91,7 +88,9 @@ public class Drunkard {
         int head = playersCardHeads[player];
         int count = head - tail + (head >= tail ? 0 : CARDS_TOTAL_COUNT);
 
-        return count == 0 && winner[player] ? CARDS_TOTAL_COUNT : count;
+        boolean winnerPlayer = (player == 0) == isFirstPlayerWin;
+
+        return count == 0 && winnerPlayer ? CARDS_TOTAL_COUNT : count;
     }
 
     private static int incrementIndex(final int i) {
