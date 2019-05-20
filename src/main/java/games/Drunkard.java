@@ -87,21 +87,11 @@ public class Drunkard {
     }
 
     private static int countCards(final int player) {
-        int count;
         int tail = playersCardTails[player];
         int head = playersCardHeads[player];
+        int count = head - tail + (head >= tail ? 0 : CARDS_TOTAL_COUNT);
 
-        if (head >= tail) {
-            count = head - tail;
-        } else {
-            count = head + CARDS_TOTAL_COUNT - tail;
-        }
-
-        if (count == 0 && winner[player]) {
-            return CARDS_TOTAL_COUNT;
-        }
-
-        return count;
+        return count == 0 && winner[player] ? CARDS_TOTAL_COUNT : count;
     }
 
     private static int incrementIndex(final int i) {
