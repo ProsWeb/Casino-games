@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 
 public class Choice {
 
-    private static final Logger log = org.slf4j.LoggerFactory.getLogger(BlackJack.class);
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Choice.class);
 
     private static final String LINE_SEPARATOR = System.lineSeparator();
 
