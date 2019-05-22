@@ -38,12 +38,7 @@ public class BlackJack {
 
             do {
                 log.info("Компьютеру выпала карта {}", cardToString(addCard2Player(1)));
-            } while (sum(1) < MIN_SUM);
-
-            while (sum(1) < MAX_COMP_SUM) {
-                log.info("Компьютер решил взять ещё и ему выпала карта {}",
-                        cardToString(addCard2Player(1)));
-            }
+            } while (sum(1) < MAX_COMP_SUM);
 
             int playerSum = getFinalSum(0);
             int compSum = getFinalSum(1);
@@ -52,23 +47,23 @@ public class BlackJack {
                     playerSum, compSum);
 
             if (playerSum == compSum) {
-                continue;
+                log.info("Ничья!\n");
             }
             if (playerSum > compSum) {
                 playersMoney[0] += 10;
                 playersMoney[1] -= 10;
-                log.info("Вы выиграли раунд! Получаете 10$");
+                log.info("Вы выиграли раунд! Получаете 10$\n");
             } else {
                 playersMoney[1] += 10;
                 playersMoney[0] -= 10;
-                log.info("Вы проиграли раунд! Теряете 10$");
+                log.info("Вы проиграли раунд! Теряете 10$\n");
             }
         }
 
         if (playersMoney[0] > 0)
-            log.info("Вы выиграли! Поздравляем!");
+            log.info("\nВы выиграли! Поздравляем!");
         else
-            log.info("Вы проиграли. Соболезнуем...");
+            log.info("\nВы проиграли. Соболезнуем...");
     }
 
     private static void initRound() {
