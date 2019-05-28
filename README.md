@@ -50,3 +50,4 @@ $ make
  - maven
  - travis
  - jitpack
+ - log4j2
