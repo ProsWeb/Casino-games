@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := update-build-run
 
 run:
-	java -jar ./target/Project1Java-1.0-SNAPSHOT-jar-with-dependencies.jar
+	java -jar ./target/Casino-games-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 clean:
 	rm -rf ./target
