@@ -29,7 +29,7 @@ Step 1. Add the JitPack repository to your build file
 ```
 <dependency>
   	<groupId>com.github.ProsWeb</groupId>
-  	<artifactId>project-lvl1-s499</artifactId>
+  	<artifactId>Casino-games</artifactId>
   	<version>Tag</version>
 </dependency>
 ```
