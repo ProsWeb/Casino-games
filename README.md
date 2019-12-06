@@ -11,7 +11,7 @@ $ sudo apt-get update
 $ sudo apt-get install make
 ```
 
-## How use library (maven)
+## How to use library (maven)
 
 Step 1. Add the JitPack repository to your build file
 
